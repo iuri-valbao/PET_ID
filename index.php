@@ -7,7 +7,7 @@
     <title>Site em PHP</title>
     <style>
         h2 {
-            color: azul;
+            color: blue;
         }
     </style>
 </head>
