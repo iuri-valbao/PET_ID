@@ -17,7 +17,7 @@
 <body>
     <h1>Testando PHP</h1>
     <?php
-        echo "<h2>Olá Mundo!</h2><br>";    
+        echo "<h2>Olá Mundo!</h2><br/>";    
     ?>
     <?php
         $n1 = $_GET["a"];
