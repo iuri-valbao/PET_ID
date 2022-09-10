@@ -21,8 +21,8 @@
     ?>
     <?php
         $nome = 'Iuri';
-        $idade = 42
-        echo $nome."tem".$idade."anos"
+        $idade = 42;
+        echo $nome."tem".$idade."anos";
     ?>
 </body>
 </html>
