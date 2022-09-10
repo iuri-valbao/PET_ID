@@ -20,9 +20,10 @@
         echo "<h2>Olá Mundo!</h2><br>";    
     ?>
     <?php
-        $nome = 'Iuri';
-        $idade = 42;
-        echo "$nome tem $idade anos!";
+        $n1 = 2;
+        $n2 = 5;
+        $soma = $n1 + $n2;
+        echo "A soma vale $soma.";
     ?>
 </body>
 </html>
