@@ -9,6 +9,9 @@
         h2 {
             color: blue;
         }
+        main {
+            background-color: yellow;
+        }
     </style>
 </head>
 <body>
