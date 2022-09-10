@@ -24,7 +24,7 @@
         $n2 = $_GET["b"];
         $s = $n1 + $n2;
         $m = $n1 * $n2;
-        echo "A soma vale de $n1 e $n2 é igual a $s.";
+        echo "A soma vale de $n1 e $n2 é igual a $s.<br/>";
         echo "A multiplicação de $n1 por $n2 é igual a $m";
     ?>
 </body>
