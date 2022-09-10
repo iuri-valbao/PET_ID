@@ -20,10 +20,9 @@
         echo "<h2>Olá Mundo!</h2><br>";    
     ?>
     <?php
-        $n1 = 2;
-        $n2 = 5;
-        $soma = $n1 + $n2;
-        echo "A soma vale $soma.";
+        $n1 = $_GET["a"];
+        $n2 = $_GET["b"];
+        echo "A soma vale de $n1 e $n2 é igual a $n1+$n2.";
     ?>
 </body>
 </html>
