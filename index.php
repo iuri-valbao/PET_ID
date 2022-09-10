@@ -9,7 +9,7 @@
         h2 {
             color: blue;
         }
-        main {
+        body {
             background-color: yellow;
         }
     </style>
