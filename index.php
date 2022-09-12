@@ -26,6 +26,10 @@
         $m = $n1 * $n2;
         echo "A soma vale de $n1 e $n2 é igual a $s.<br/>";
         echo "A multiplicação de $n1 por $n2 é igual a $m";
-    ?>
+    ?><h2>Só para comitar</h2>
+    <p>
+        Este texto foi inserido sommente para deixar um quadradinho do Github verdinho
+    </p>
+
 </body>
 </html>
