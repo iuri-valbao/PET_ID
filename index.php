@@ -28,7 +28,7 @@
         echo "A multiplicação de $n1 por $n2 é igual a $m";
     ?><h2>Só para comitar</h2>
     <p>
-        Este texto foi inserido sommente para deixar um quadradinho do Github verdinho
+        Este texto foi inserido sommente para deixar um quadradinho do Github verdinho +1
     </p>
 
 </body>
