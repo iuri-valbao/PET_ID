@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <h1>Testando PHP</h1>
+    <h1>Testando PHP novamente</h1>
     <?php
         echo "<h2>Olá Mundo!</h2><br/>";    
     ?>
