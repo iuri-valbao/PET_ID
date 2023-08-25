@@ -17,9 +17,10 @@
         ?>
         <?php
         echo '<p>Your order is as follows:</p>';
-        echo htmlspecialchars($tireqty).' tires<br />';
-        echo htmlspecialchars($oilqty).' bottles of oil<br />';
-        echo htmlspecialchars($sparkqty).' spark plugs<br />';
+        $tireqty = htmlspecialchars($tireqty);
+        $oilqty = htmlspecialchars($oilqty);
+        $sparkqty = htmlspecialchars($sparkqty);
+        echo "$tireqty t__ires<br />"."$oilqty b__ottles of oil<br/>"."$sparkqty s__park plugs";
         ?>
     </body>
 </html>
