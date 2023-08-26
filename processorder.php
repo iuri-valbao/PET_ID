@@ -10,9 +10,9 @@
         $oilqty = $_POST['oilqty'];
         $sparkqty = $_POST['sparkqty'];
         
-        define('TIREPRICE', 100);
-        difine('OILPRICE', 10);
-        define('SPARKPRICE', 4);        
+        define("TIREPRICE", 100);
+        define("OILPRICE", 10);
+        define("SPARKPRICE", 4);        
         ?>
         <h1>Bob's Auto Parts</h1>
         <h2>Order Results</h2>
@@ -24,7 +24,7 @@
         $tireqty = htmlspecialchars($tireqty);
         $oilqty = htmlspecialchars($oilqty);
         $sparkqty = htmlspecialchars($sparkqty);
-        echo "$tireqty t__ires<br />"."$oilqty b__ottles of oil<br/>"."$sparkqty s__park plugs";
+        echo "$tireqty tires<br />"."$oilqty bottles of oil<br/>"."$sparkqty spark plugs";
         ?>
         <?php
         $totalqty = 0;
@@ -33,12 +33,18 @@
         $totalamount = 0.00;
       
         $totalamount = $tireqty * TIREPRICE + $oilqty * OILPRICE + $sparkqty * SPARKPRICE;
-        echo "Subtotal: $".number_format($totalamount,2)."<br />";
+        echo "Subtotal: R$ ".number_format($totalamount,2)."<br />";
 
         $taxrate = 0.10; //local sales tax is 10%
         $totalamount = $totalamount * (1 + $taxrate);
-        echo "Total including tax: $".number_format($totalamount,2)."</p>";
+        echo "Total including tax: R$ ".number_format($totalamount,2)."</p>";
         ?>
+        <?php
+        echo 'isset($tireqty) : '.isset($tireqty) . '<br />';
+        echo 'isset($nothere) : '.isset($nothere) . '<br />';
+        echo 'empty($tireqty) : '.empty($tireqty) . '<br />';
+        echo 'empty($nothere) : '.empty($nothere) . '<br />';
+        ?>        
     </body>
 </html>
 
