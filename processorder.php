@@ -28,7 +28,7 @@
         ?>
         <?php
         $totalqty = 0;
-        $totalqty = $tireqty + $oilqty + $sparkqty;
+        $totalqty = $tireqty + $oilqty +$sparkqty;
         echo "<p>Items ordered: ".$totalqty."<br />";
         $totalamount = 0.00;
       
