@@ -11,14 +11,14 @@
         </tr>
         <?php
         $distance = 50;
-        while (distance <= 250) {
+        while ($distance <= 250) {
             echo "<tr>
-                  <td style=\"text-align: right;\">   ".$distance."      </td>
-                  <td style=\"text-align: right;\">   ".$distance/10."   </td>
-                  </tr>\n";
+                <td style=\"text-align: right\">".$distance."</td>
+                <td style=\"text-align: right\">".($distance/10)."</td>
+                </tr>\n";
             $distance += 50;
         }
         ?>
         </table>
     </body>
-</html> 
+</html>
