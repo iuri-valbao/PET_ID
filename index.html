@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrada de dados</title>
+    <link rel="stylesheet"  type="text/css" href="style.css">
 </head>
 <body>
-    <form>
+    <div><h1 id="titulo">Preencha seus dados</h1><br></div>
+    <form action="cadastro.php" method="get">
         <fieldset>
             <div>
                 <label for="inome">Nome</label>
-                <input type="text" name="nome" id="inome">
+                <input type="text" name="nome" id="inome" size="50">
             </div>
             <div>
                 <label for="iemail">Email</label>
-                <input type="email" name="email id="iemail">
+                <input type="email" name="email" id="iemail" size="50">
             </div>
         </fieldset>
         <fieldset>
-            <div><input type="submit" value="Enviar"></div>
+            <div>
+                <input id="botao" type="submit" value="Enviar">
+            </div>
         </fieldset>
-
     </form>
 </body>
 </html>

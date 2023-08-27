@@ -1,0 +1,48 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#titulo {
+    font-family: sans-serif;
+    color: rgb(4, 4, 92);
+    text-align: center;
+}
+
+form {
+    background-color: rgb(152, 173, 173) ;
+    
+}
+
+body {
+    background-color: rgb(197, 196, 196);
+    font-family: sans-serif;
+    font-size: 1em;
+    margin-left: 30%;
+    margin-top: 5%;
+    margin-right: 30%;
+}
+
+input {
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+label {
+    margin-left: 10px;
+}
+
+div {
+    text-align: center;
+}
+
+#botao {
+    font-size: 15px;
+}
+
+
