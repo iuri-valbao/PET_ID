@@ -14,15 +14,6 @@ form {
     
 }
 
-body {
-    background-color: rgb(197, 196, 196);
-    font-family: sans-serif;
-    font-size: 1em;
-    margin-left: 30%;
-    margin-top: 5%;
-    margin-right: 30%;
-}
-
 input {
     border-radius: 5px;
     padding-top: 5px;
