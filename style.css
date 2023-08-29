@@ -2,38 +2,40 @@
     margin: 0px;
     padding: 0px;
 }
-
+body {
+    margin: 0 auto;
+    background-color: rgb(122, 120, 120);
+}
 #titulo {
+    width: 550px;
+    margin: 0 auto;
     font-family: sans-serif;
     color: rgb(4, 4, 92);
     text-align: center;
+    border: 1px solid red;
+    background-color: #ccc;
 }
-
 form {
-    background-color: rgb(152, 173, 173) ;
+    width: 550px;
+    margin: 0 auto;
+    background-color: #ccc;
+    margin-top: 20px;
+    font-family: sans-serif;
+}
+.nome {
+    margin-top: 4px;
+    text-align: center;
+    
     
 }
-
-input {
-    border-radius: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-label {
-    margin-left: 10px;
-}
-
-div {
+.email {
+    margin-top: 4px;
+    margin-bottom: 4px;
     text-align: center;
 }
-
-#botao {
-    font-size: 15px;
+.botao {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    width: 100%;
+    text-align: center;
 }
-
-
