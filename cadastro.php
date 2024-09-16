@@ -9,7 +9,7 @@
     <?php
         $nome = $_GET['nome'];
         $email = $_GET['email'];
-        echo "<p>Seu dados serão espalhados pela internet!</P>";
+        echo "<p>Agora seus dados serão espalhados pela internet!</P>";
         echo "$nome.<br>";
         echo "$email.<br>";
         echo "<p>Obrigado!</p>"
