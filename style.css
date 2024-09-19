@@ -1,41 +1,45 @@
-* {
-    margin: 0px;
-    padding: 0px;
-}
 body {
-    margin: 0 auto;
-    background-color: rgb(122, 120, 120);
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
 }
-#titulo {
-    width: 550px;
-    margin: 0 auto;
-    font-family: sans-serif;
-    color: rgb(4, 4, 92);
-    text-align: center;
-    border: 1px solid red;
-    background-color: #ccc;
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+h1 {
+    color: #0056b3;
+}
+
 form {
-    width: 550px;
-    margin: 0 auto;
-    background-color: #ccc;
-    margin-top: 20px;
-    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
 }
-.nome {
-    margin-top: 4px;
-    text-align: center;
-    
-    
+
+input, textarea, button {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
-.email {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    text-align: center;
+
+button {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
 }
-.botao {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    width: 100%;
-    text-align: center;
+
+button:hover {
+    background-color: #003d7a;
+}
+
+a {
+    color: #0056b3;
 }
