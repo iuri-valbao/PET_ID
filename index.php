@@ -10,7 +10,7 @@
         <h1>Pet ID</h1>
         <div class="form-container">
             <form action="login.php" method="POST">
-                <input type="text" name="username" placeholder="Usuário" required>
+                <input type="email" name="email" placeholder="E-mail" required>
                 <input type="password" name="password" placeholder="Senha" required>
                 <button type="submit">Login</button>
             </form>

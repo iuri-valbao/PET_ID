@@ -1,45 +1,49 @@
-body {
-    font-family: Arial, sans-serif;
+/* Estilos para a divisão das seções */
+.user-data, .animal-data {
+    margin-bottom: 30px;
+}
+
+.user-data h2, .animal-data h2 {
+    color: #0056b3;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.animal-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.animal-buttons button {
+    flex: 1 1 150px;
     background-color: #f0f0f0;
     color: #333;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    color: #0056b3;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-input, textarea, button {
-    margin-bottom: 10px;
-    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+}
+
+.animal-buttons button:hover {
+    background-color: #e0e0e0;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 30px 0;
 }
 
 button {
-    background-color: #0056b3;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #003d7a;
-}
-
-a {
-    color: #0056b3;
+    padding: 10px 20px;
 }
