@@ -177,7 +177,7 @@ try {
                 </tr>
                 <tr>
                     <th>Observações</th>
-                    <td><?php echo htmlspecialchars($user['observations']); ?></td>
+                    <td><?php echo htmlspecialchars($user['notes']); ?></td>
                 </tr>
             </table>
             <div class="button-container">

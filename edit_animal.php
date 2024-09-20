@@ -30,7 +30,7 @@ try {
 }
 
 // Atualiza os dados do animal no banco de dados
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_animal'])) {
     $name = $_POST['name'];
     $birth_date = $_POST['birth_date'];
     $species = $_POST['species'];
@@ -81,6 +81,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     } catch (PDOException $e) {
         echo "Erro ao atualizar dados do animal: " . $e->getMessage();
+    }
+}
+
+// Exclui o animal do banco de dados
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_animal'])) {
+    try {
+        $stmt = $pdo->prepare("DELETE FROM animals WHERE id = :animal_id AND user_id = :user_id");
+        $stmt->bindParam(':animal_id', $animal_id);
+        $stmt->bindParam(':user_id', $user_id);
+        $stmt->execute();
+
+        // Redireciona para o dashboard após excluir
+        header("Location: dashboard.php");
+        exit;
+    } catch (PDOException $e) {
+        echo "Erro ao excluir animal: " . $e->getMessage();
     }
 }
 ?>
@@ -155,7 +171,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         .button-back:hover {
             background-color: #5a6268;
         }
+
+        .button-delete {
+            background-color: #dc3545;
+        }
+
+        .button-delete:hover {
+            background-color: #c82333;
+        }
     </style>
+    <script>
+        function confirmDeletion() {
+            return confirm('Tem certeza de que deseja excluir este animal? Esta ação não pode ser desfeita.');
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -182,8 +211,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="file" id="photo" name="photo" accept=".jpg, .jpeg">
 
                 <div class="button-container">
-                    <button type="submit" class="button">Salvar Alterações</button>
+                    <button type="submit" name="update_animal" class="button">Salvar Alterações</button>
                     <button type="button" class="button button-back" onclick="window.location.href='view_animal.php?animal_id=<?php echo $animal_id; ?>'">Cancelar</button>
+                </div>
+
+                <div class="button-container" style="margin-top: 20px;">
+                    <button type="submit" name="delete_animal" class="button button-delete" onclick="return confirmDeletion();">Excluir Animal</button>
                 </div>
             </form>
         </div>
