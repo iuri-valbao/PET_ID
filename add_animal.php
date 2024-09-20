@@ -12,7 +12,7 @@ require 'db_connection.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $birth_date = $_POST['birth_date'];
-    $type_species = $_POST['type_species'];
+    $type_species = $_POST['species'];
     $breed = $_POST['breed'];
     $vaccination_card = $_FILES['vaccination_card']['name'];
     $photo = $_FILES['photo']['name'];
@@ -27,12 +27,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     try {
         // Insere o novo animal no banco de dados
-        $stmt = $pdo->prepare("INSERT INTO animals (user_id, name, birth_date, type_species, breed, vaccination_card, photo) 
-                               VALUES (:user_id, :name, :birth_date, :type_species, :breed, :vaccination_card, :photo)");
+        $stmt = $pdo->prepare("INSERT INTO animals (user_id, name, birth_date, species, breed, vaccination_card, photo) 
+                               VALUES (:user_id, :name, :birth_date, :species, :breed, :vaccination_card, :photo)");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':birth_date', $birth_date);
-        $stmt->bindParam(':type_species', $type_species);
+        $stmt->bindParam(':species', $type_species);
         $stmt->bindParam(':breed', $breed);
         $stmt->bindParam(':vaccination_card', $vaccination_card);
         $stmt->bindParam(':photo', $photo);

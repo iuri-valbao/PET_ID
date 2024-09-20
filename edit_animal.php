@@ -40,14 +40,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $vaccination_card = $animal['vaccination_card'];
     $photo = $animal['photo'];
 
+    // Upload da carteira de vacinação (somente JPG)
     if (!empty($_FILES['vaccination_card']['name'])) {
-        $vaccination_card = time() . '_' . $_FILES['vaccination_card']['name'];
-        move_uploaded_file($_FILES['vaccination_card']['tmp_name'], "uploads/$vaccination_card");
+        $file_ext = strtolower(pathinfo($_FILES['vaccination_card']['name'], PATHINFO_EXTENSION));
+        if ($file_ext === 'jpg' || $file_ext === 'jpeg') {
+            $vaccination_card = time() . '_vaccination_card_' . $animal_id . '.jpg';
+            move_uploaded_file($_FILES['vaccination_card']['tmp_name'], "uploads/$vaccination_card");
+        } else {
+            echo "Erro: A carteira de vacinação deve ser uma imagem JPG.";
+            exit;
+        }
     }
 
+    // Upload da foto do animal (somente JPG)
     if (!empty($_FILES['photo']['name'])) {
-        $photo = time() . '_' . $_FILES['photo']['name'];
-        move_uploaded_file($_FILES['photo']['tmp_name'], "uploads/$photo");
+        $file_ext = strtolower(pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION));
+        if ($file_ext === 'jpg' || $file_ext === 'jpeg') {
+            $photo = time() . '_photo_' . $animal_id . '.jpg';
+            move_uploaded_file($_FILES['photo']['tmp_name'], "uploads/$photo");
+        } else {
+            echo "Erro: A foto do animal deve ser uma imagem JPG.";
+            exit;
+        }
     }
 
     try {
@@ -160,11 +174,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="breed">Raça</label>
                 <input type="text" id="breed" name="breed" value="<?php echo htmlspecialchars($animal['breed']); ?>" required>
 
-                <label for="vaccination_card">Carteira de Vacinação (PDF)</label>
-                <input type="file" id="vaccination_card" name="vaccination_card" accept=".pdf">
+                <!-- Aceitar somente JPG -->
+                <label for="vaccination_card">Carteira de Vacinação (Imagem JPG)</label>
+                <input type="file" id="vaccination_card" name="vaccination_card" accept=".jpg, .jpeg">
 
-                <label for="photo">Foto do Animal (Imagem)</label>
-                <input type="file" id="photo" name="photo" accept="image/*">
+                <label for="photo">Foto do Animal (Imagem JPG)</label>
+                <input type="file" id="photo" name="photo" accept=".jpg, .jpeg">
 
                 <div class="button-container">
                     <button type="submit" class="button">Salvar Alterações</button>
