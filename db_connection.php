@@ -1,5 +1,5 @@
 <?php
-// Configurações do banco de dados
+// Configurações do banco de dados para servidor local
 $host = 'localhost:3306'; // Endereço do servidor MySQL
 $dbname = 'pet_id'; // Nome do banco de dados
 $username = 'root'; // Usuário do MySQL (ajuste conforme necessário)
