@@ -104,17 +104,6 @@ try {
         .button-back:hover {
             background-color: #5a6268;
         }
-
-        /* Estilo para o QR Code */
-        .qr-code-container {
-            display: flex;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .qr-code-container img {
-            margin-right: 20px;
-        }
     </style>
 </head>
 <body>
@@ -160,15 +149,6 @@ try {
                     </td>
                 </tr>
             </table>
-
-            <!-- Exibir o QR Code -->
-            <div class="qr-code-container">
-                <img src="<?php echo htmlspecialchars($animal['qr_code']); ?>" alt="QR Code" style="width: 200px;">
-            </div>
-            <div class="button-container">
-              <!-- Botão para imprimir o QR Code -->
-               <button class="button" onclick="window.open('print_qrcode.php?qr_code=<?php echo urlencode($animal['qr_code']); ?>', '_blank')">Imprimir QR Code</button>
-            </div>
         </div>
 
         <div class="button-container">

@@ -45,48 +45,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    // Gerar QR Code usando a API GoQR.me
-    $qr_code_url = "http://localhost/teste/qrcode_view_animal.php?animal_id=" . $pdo->lastInsertId();
-    $qrCodePath = "uploads/qrcodes/" . time() . "_qrcode.png"; // Definir o caminho para o QR Code
-
-    // Salvar o QR code em um arquivo
-    file_put_contents($qrCodePath, file_get_contents("https://api.qrserver.com/v1/create-qr-code/?data=" . urlencode($qr_code_url) . "&size=200x200"));
-
     // Insere os dados do novo animal no banco de dados
-    // Insere os dados do novo animal no banco de dados
-try {
-    $stmt = $pdo->prepare("INSERT INTO animals (name, birth_date, species, breed, vaccination_card, photo, user_id) VALUES (:name, :birth_date, :species, :breed, :vaccination_card, :photo, :user_id)");
-    $stmt->bindParam(':name', $name);
-    $stmt->bindParam(':birth_date', $birth_date);
-    $stmt->bindParam(':species', $species);
-    $stmt->bindParam(':breed', $breed);
-    $stmt->bindParam(':vaccination_card', $vaccination_card);
-    $stmt->bindParam(':photo', $photo);
-    $stmt->bindParam(':user_id', $user_id);
-    $stmt->execute();
+    try {
+        $stmt = $pdo->prepare("INSERT INTO animals (name, birth_date, species, breed, vaccination_card, photo, user_id) VALUES (:name, :birth_date, :species, :breed, :vaccination_card, :photo, :user_id)");
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':birth_date', $birth_date);
+        $stmt->bindParam(':species', $species);
+        $stmt->bindParam(':breed', $breed);
+        $stmt->bindParam(':vaccination_card', $vaccination_card);
+        $stmt->bindParam(':photo', $photo);
+        $stmt->bindParam(':user_id', $user_id);
+        $stmt->execute();
 
-    // Aqui é onde você obtém o ID do animal adicionado
-    $animal_id = $pdo->lastInsertId();
-
-    // Gerar QR Code usando a API GoQR.me com o ID correto
-    $qr_code_url = "http://localhost:8080/teste/qrcode_view_animal.php?animal_id=" . $animal_id;
-    $qrCodePath = "uploads/qrcodes/" . time() . "_qrcode.png"; // Definir o caminho para o QR Code
-
-    // Salvar o QR code em um arquivo
-    file_put_contents($qrCodePath, file_get_contents("https://api.qrserver.com/v1/create-qr-code/?data=" . urlencode($qr_code_url) . "&size=200x200"));
-
-    // Agora você pode atualizar o banco de dados com o caminho do QR Code
-    $stmt = $pdo->prepare("UPDATE animals SET qr_code = :qr_code WHERE id = :id");
-    $stmt->bindParam(':qr_code', $qrCodePath);
-    $stmt->bindParam(':id', $animal_id);
-    $stmt->execute();
-
-    // Redireciona para o dashboard após salvar
-    header("Location: dashboard.php");
-    exit;
+        // Redireciona para o dashboard após salvar
+        header("Location: dashboard.php");
+        exit;
     } catch (PDOException $e) {
-    echo "Erro ao adicionar animal: " . $e->getMessage();
-  }
+        echo "Erro ao adicionar animal: " . $e->getMessage();
+    }
 }
 ?>
 
@@ -179,6 +155,7 @@ try {
                 <label for="breed">Raça</label>
                 <input type="text" id="breed" name="breed" required>
 
+                <!-- Aceitar somente JPG -->
                 <label for="vaccination_card">Carteira de Vacinação (Imagem JPG)</label>
                 <input type="file" id="vaccination_card" name="vaccination_card" accept=".jpg, .jpeg">
 
